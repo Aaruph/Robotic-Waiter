@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/customer/menu.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Menu</h1>
+        <ul>
+            {% for item in items %}
+            <li>
+                <img src="{{ url_for('static', filename='uploads/' ~ item.image_filename) }}" alt="{{ item.name }}">
+                <strong>{{ item.name }}</strong>
+                <div class="item-description">
+                    {{ item.description }}
+                </div>
+                <div class="item-price">
+                    Rs. {{ item.price }}
+                </div>
+                <a href="{{ url_for('order', item_id=item.id) }}">Order</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

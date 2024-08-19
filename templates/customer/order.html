@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order {{ item.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/customer/order.css') }}">
+</head>
+<body>
+
+    <div class="main">  
+        <img src="{{ url_for('static', filename='uploads/' ~ item.image_filename) }}" alt="{{ item.name }}"><br>
+            <h1>Place Order</h1>
+            
+            <!-- Display Item Details -->
+            <div class="item-details">
+                <p><strong>Name:</strong> {{ item.name }}</p>
+                <p><strong>Description:</strong> {{ item.description }}</p>
+                <p><strong>Price:</strong> ${{ item.price }}</p>
+            </div>
+            
+            <form method="POST">
+                <label for="quantity">Quantity:</label><br>
+                <input type="number" id="quantity" name="quantity" required><br><br>
+                <label for="table_number">Table Number:</label><br>
+                <input type="number" id="table_number" name="table_number" required><br><br>
+                <button type="submit">Place Order</button>
+            </form> 
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+/* File: static/css/kitchen/total_orders.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+
+    height: 100vh; /* Full viewport height */
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.button {
+   
+    padding: 10px 20px;
+    font-size: 1.0rem;
+    color: #000000;
+    background-color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer; /* Change cursor to pointer on hover */
+    
+}
+
+.button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Status colors */
+.status-pending {
+    color: red;
+}
+
+.status-completed {
+    color: green;
+}

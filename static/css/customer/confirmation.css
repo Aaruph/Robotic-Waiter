@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 10px;
+}
+
+.confirmation-container {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #000000;
+    background-color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.0rem;
+    color: white;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+    
+}
+p {
+    color: white;
+    font-size: 1rem;
+
+}
+.button:hover {
+    background-color: #0056b3;
+}

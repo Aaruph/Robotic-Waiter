@@ -1,0 +1,71 @@
+/* File: static/css/kitchen/send_command.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.send-command-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+input[type="number"] {
+    width: 250px; /* Adjust width as needed */
+    height: 40px; /* Adjust height as needed */
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px; /* Border radius for rounded corners */
+    border: 1px solid #ddd;
+    margin-bottom: 20px; /* Space between input and button */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px; /* Space above the "Back to Orders" button */
+}
+
+.button:hover {
+    background-color: #0056b3;
+}

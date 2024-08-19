@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Orders</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/kitchen/total_orders.css') }}">
+</head>
+<body>
+    <div class="orders-container">
+        <h1>Total Orders</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Item ID</th> <!-- Added column for Item ID -->
+                    <th>Item Name</th> <!-- Added column for Item Name -->
+                    <th>Quantity</th>
+                    <th>Table Number</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order, item_name in orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.item_id }}</td> <!-- Display Item ID -->
+                    <td>{{ item_name }}</td> <!-- Display Item Name -->
+                    <td>{{ order.quantity }}</td>
+                    <td>{{ order.table_number }}</td>
+                    <td class="{{ 'status-completed' if order.status == 'Completed' else 'status-pending' }}">
+                        {{ order.status }}
+                    </td>
+                    <td>
+                        {% if order.status == 'Pending' %}
+                            <form action="{{ url_for('send_command', order_id=order.id) }}" method="post">
+                                <button type="submit" class="button">Send Command</button>
+                            </form>
+                        {% else %}
+                            <span>Sent</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('add_menu_item') }}">Add Menu Item</a>
+    </div>
+</body>
+</html>
